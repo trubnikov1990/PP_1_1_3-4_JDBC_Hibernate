@@ -38,9 +38,6 @@ public class Util {
     }
     return connection;
   }
-
-  public static class HibernateUtil {
-
     private static SessionFactory sessionFactory;
 
     public static SessionFactory getSessionFactory() {
@@ -55,7 +52,7 @@ public class Util {
           setting.put(Environment.PASS, DB_PASSWORD);
           setting.put(Environment.DIALECT, DB_DIALECT);
           setting.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
-          setting.put(Environment.HBM2DDL_AUTO, "create - drop");
+          setting.put(Environment.HBM2DDL_AUTO, "");
           setting.put(Environment.SHOW_SQL, "true");
 
           configuration.setProperties(setting);
@@ -73,6 +70,6 @@ public class Util {
       return sessionFactory;
     }
   }
-}
+
 
 
