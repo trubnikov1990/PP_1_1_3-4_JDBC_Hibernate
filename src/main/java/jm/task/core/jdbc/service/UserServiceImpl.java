@@ -10,17 +10,16 @@ public class UserServiceImpl implements UserService {
     UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
     UserDaoHibernateImpl userDaoHibernate = new UserDaoHibernateImpl();
     public void createUsersTable() {
-        userDaoJDBC.createUsersTable();
+        userDaoHibernate.createUsersTable();
     }
 
     public void dropUsersTable() {
-        userDaoJDBC.dropUsersTable();
+        userDaoHibernate.dropUsersTable();
     }
 
     public void saveUser(String name, String lastName, byte age) {
 
         userDaoHibernate.saveUser(name,lastName,age);
-//        userDaoJDBC.saveUser(name,lastName,age);
         System.out.println("User с именем – " + name + " добавлен в базу данных");
     }
 
@@ -29,7 +28,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<User> getAllUsers() {
-        return userDaoJDBC.getAllUsers();
+        return userDaoHibernate.getAllUsers();
     }
 
     public void cleanUsersTable() {
