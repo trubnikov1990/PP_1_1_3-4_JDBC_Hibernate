@@ -52,7 +52,7 @@ public class Util {
           setting.put(Environment.PASS, DB_PASSWORD);
           setting.put(Environment.DIALECT, DB_DIALECT);
           setting.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
-          setting.put(Environment.HBM2DDL_AUTO, "");
+          setting.put(Environment.HBM2DDL_AUTO, "none");
           setting.put(Environment.SHOW_SQL, "true");
 
           configuration.setProperties(setting);
